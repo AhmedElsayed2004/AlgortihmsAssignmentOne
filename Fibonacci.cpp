@@ -41,13 +41,14 @@ long long ItriativeFib(int n){
     return IFib[n];
 
 }
+const int MOD = 1e9+7;
 const int k = 3;
 vector<vector<int>> matrixMutliplication(vector<vector<int>> A,vector<vector<int>> B){
     vector<vector<int>> C (k,vector<int>(k));
     for(int i = 1 ; i<k ;i++){
         for(int j = 1 ; j<k ;j++){
             for(int q = 1 ; q<k ;q++){
-                C[i][j] += A[i][q] * B[q][j];
+                C[i][j] = (C[i][j] +A[i][q] * B[q][j])%MOD;
             }
         }
 
