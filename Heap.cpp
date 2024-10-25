@@ -2,9 +2,9 @@
 // Created by mahmoud on 10/25/2024.
 //
 
-#include <iostream>
 #include "Heap.h"
-void Heap::insert(int element) {
+template<typename T>
+void Heap<T>::insert(T element) {
     if(!isMaxHeap){
         buildMaxHeap(size);
         isMaxHeap=1;
@@ -18,7 +18,15 @@ void Heap::insert(int element) {
     }
 
 }
-int Heap::extractMax() {
+template<typename T>
+void Heap<T>::insert(T arr[],int size){
+    for(int element = 0; element <size; element++){
+        this->insert(arr[element]);
+    }
+
+}
+template<typename T>
+T Heap<T>::extractMax() {
     if(!isMaxHeap){
         buildMaxHeap(size);
         isMaxHeap=1;
@@ -29,7 +37,7 @@ int Heap::extractMax() {
         int last = size-1;
         size--;
         swap(heap[0],heap[last]);
-        int max =heap[last] ;
+        T max = heap[last] ;
         heap.pop_back();
         int perant=0, leftChild = 2*perant+1,rightChild = 2*perant+2,current;
         while(leftChild<size){
@@ -51,12 +59,16 @@ int Heap::extractMax() {
 
     }
 }
-void Heap::buildMaxHeap(int size){
+template<typename T>
+void Heap<T>::buildMaxHeap(int size){
     maxHeapify(size);
-}void Heap::buildMinHeap(int size){
+}
+template<typename T>
+void Heap<T>::buildMinHeap(int size){
     minHeapify(size);
 }
-int Heap::extractMin() {
+template<typename T>
+T Heap<T>::extractMin() {
     if(isMaxHeap){
         buildMinHeap(size);
         isMaxHeap=0;
@@ -89,7 +101,8 @@ int Heap::extractMin() {
 
     }
 }
-void Heap::maxHeapify(int size) {
+template<typename T>
+void Heap<T>::maxHeapify(int size) {
     for(int perant = (size/2)-1; perant >=0 ; perant--){
         int leftChild = 2*perant+1,rightChild = 2*perant+2,current;
         while(leftChild<size){
@@ -112,7 +125,8 @@ void Heap::maxHeapify(int size) {
 
 
 }
-void Heap::minHeapify(int size) {
+template<typename T>
+void Heap<T>::minHeapify(int size) {
     for(int perant = (size/2)-1; perant >=0 ; perant--){
         int leftChild = 2*perant+1,rightChild = 2*perant+2,current;
         while(leftChild<size){
