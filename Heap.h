@@ -17,8 +17,9 @@ private:
     void minHeapify(int);
     void buildMaxHeap(int);
     void buildMinHeap(int);
-public:
 
+public:
+    void heapSort();
     virtual void insert(T);
     void insert(T arr[],int size);
     virtual T extractMax();

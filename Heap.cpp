@@ -60,6 +60,41 @@ T Heap<T>::extractMax() {
     }
 }
 template<typename T>
+void Heap<T>::heapSort() {
+    int tempSize =size;
+    if(!isMaxHeap){
+        buildMaxHeap(size);
+        isMaxHeap=1;
+    }
+    if(size==0){
+        throw std::runtime_error("\nheap is empty!\n");
+    }else{
+        int last = tempSize-1;
+        tempSize--;
+        swap(heap[0],heap[last]);
+        T max = heap[last] ;
+        heap.pop_back();
+        int perant=0, leftChild = 2*perant+1,rightChild = 2*perant+2,current;
+        while(leftChild<tempSize){
+            if(heap[leftChild]<heap[rightChild] and rightChild <tempSize){
+                current=rightChild;
+            }else{
+                current= leftChild;
+            }
+            if(heap[perant]<heap[current]){
+                swap(heap[perant],heap[current]);
+                perant=current;
+                leftChild=2*perant+1;
+                rightChild=2*perant+2;
+            }else{
+                break;
+            }
+        }
+
+
+    }
+}
+template<typename T>
 void Heap<T>::buildMaxHeap(int size){
     maxHeapify(size);
 }
@@ -103,6 +138,7 @@ T Heap<T>::extractMin() {
 }
 template<typename T>
 void Heap<T>::maxHeapify(int size) {
+    vector<int> heap;
     for(int perant = (size/2)-1; perant >=0 ; perant--){
         int leftChild = 2*perant+1,rightChild = 2*perant+2,current;
         while(leftChild<size){
