@@ -24,10 +24,9 @@ long long dpFib(int n){
     else if(n==2){
         return fib[n]= 1;
     }
-    else if(~fib[n]){
+    else if(!fib[n]){
         return fib[n]=recFib(n-1)+ recFib(n-2);
     }
-    return fib[n];
 
 }
 //Itriative dp Fibonacci Series
@@ -37,8 +36,7 @@ long long ItriativeFib(int n){
     IFib[2]=1;
     int i = 3;
     for(;i<=n;i++){
-        if(~IFib[i])
-            IFib[i]=IFib[i-1]+IFib[i-2];
+        IFib[i]=IFib[i-1]+IFib[i-2];
     }
     return IFib[n];
 
@@ -82,35 +80,35 @@ long long Fibonacci(long long n){
         return answer;
     }
 }
-//
-//int main() {
-//    cout<<"Recursive Fibonacci Series:\n";
-//    cout<<recFib(0)<<"\n";
-//    cout<<recFib(1)<<"\n";
-//    cout<<recFib(2)<<"\n";
-//    cout<<recFib(3)<<"\n";
-//    cout<<recFib(4)<<"\n";
-//    cout<<recFib(5)<<"\n";
-//    cout<<"Recursive dp Fibonacci Series:\n";
-//    cout<<dpFib(0)<<"\n";
-//    cout<<dpFib(1)<<"\n";
-//    cout<<dpFib(2)<<"\n";
-//    cout<<dpFib(3)<<"\n";
-//    cout<<dpFib(4)<<"\n";
-//    cout<<dpFib(5)<<"\n";
-//    cout<<"Iterative dp Fibonacci Series:\n";
-//    cout<<ItriativeFib(0)<<"\n";
-//    cout<<ItriativeFib(1)<<"\n";
-//    cout<<ItriativeFib(2)<<"\n";
-//    cout<<ItriativeFib(3)<<"\n";
-//    cout<<ItriativeFib(4)<<"\n";
-//    cout<<ItriativeFib(5)<<"\n";
-//    cout<<"Matrix Fibonacci Series:\n";
-//    cout<<Fibonacci(0)<<"\n";
-//    cout<<Fibonacci(1)<<"\n";
-//    cout<<Fibonacci(2)<<"\n";
-//    cout<<Fibonacci(3)<<"\n";
-//    cout<<Fibonacci(4)<<"\n";
-//    cout<<Fibonacci(5)<<"\n";
-//
-//}
+
+int main() {
+    cout<<"Recursive Fibonacci Series:\n";
+    cout<<recFib(0)<<"\n";
+    cout<<recFib(1)<<"\n";
+    cout<<recFib(2)<<"\n";
+    cout<<recFib(3)<<"\n";
+    cout<<recFib(4)<<"\n";
+    cout<<recFib(5)<<"\n";
+    cout<<"Recursive dp Fibonacci Series:\n";
+    cout<<dpFib(0)<<"\n";
+    cout<<dpFib(1)<<"\n";
+    cout<<dpFib(2)<<"\n";
+    cout<<dpFib(3)<<"\n";
+    cout<<dpFib(4)<<"\n";
+    cout<<dpFib(5)<<"\n";
+    cout<<"Iterative dp Fibonacci Series:\n";
+    cout<<ItriativeFib(0)<<"\n";
+    cout<<ItriativeFib(1)<<"\n";
+    cout<<ItriativeFib(2)<<"\n";
+    cout<<ItriativeFib(3)<<"\n";
+    cout<<ItriativeFib(4)<<"\n";
+    cout<<ItriativeFib(5)<<"\n";
+    cout<<"Matrix Fibonacci Series:\n";
+    cout<<Fibonacci(0)<<"\n";
+    cout<<Fibonacci(1)<<"\n";
+    cout<<Fibonacci(2)<<"\n";
+    cout<<Fibonacci(3)<<"\n";
+    cout<<Fibonacci(4)<<"\n";
+    cout<<Fibonacci(5)<<"\n";
+
+}
