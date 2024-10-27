@@ -27,6 +27,7 @@ long long dpFib(int n){
     else if(!fib[n]){
         return fib[n]=recFib(n-1)+ recFib(n-2);
     }
+    return fib[n];
 
 }
 //Itriative dp Fibonacci Series
@@ -73,7 +74,7 @@ long long Fibonacci(long long n){
     if(n==1 or  n == 0 ){
         return n;
     }else{
-        int answer = 0;
+        int answer{};
         T = matrixPower(T,n-1);
         for(int i =1 ; i<k ; i++){
            answer+= T[1][i];
@@ -111,5 +112,10 @@ long long Fibonacci(long long n){
 //    cout<<Fibonacci(3)<<"\n";
 //    cout<<Fibonacci(4)<<"\n";
 //    cout<<Fibonacci(5)<<"\n";
+//    cout<<Fibonacci(6)<<"\n";
+//    cout<<Fibonacci(7)<<"\n";
+//    cout<<Fibonacci(8)<<"\n";
+//    cout<<Fibonacci(9)<<"\n";
+//    cout<<Fibonacci(20)<<"\n";
 //
 //}

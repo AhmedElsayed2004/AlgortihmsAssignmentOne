@@ -20,7 +20,7 @@ int RecursiveSearch(int i, int arr[], int n, int target) {
     if (arr[i] == target) {
         return i;
     }
-    return RecursiveSearch(i + 1, arr, i + 1, target);
+    return RecursiveSearch(i + 1, arr, n, target);
 }
 
 int IterativeBinarySearch(int arr[], int n, int target) {
@@ -56,8 +56,14 @@ int RecursiveBinarySearch(int low, int high, int arr[], int target) {
     }
 }
 
-//
+
 //int main() {
+//    int arr[]={1,2,3,4,5,6,7,8,9};
+//    int index = IterativeSearch(arr,9,8);
+//    cout<<index<<endl;
+//    index = RecursiveSearch(0,arr,9,10);
+//    cout<<index<<endl;
+//
 //
 //
 //}
